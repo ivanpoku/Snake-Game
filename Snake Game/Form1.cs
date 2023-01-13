@@ -13,73 +13,87 @@ namespace Snake_Game
 
     public partial class Form1 : Form
     {
-        Rectangle player1 = new Rectangle(10, 170, 60, 60);
-        SolidBrush greenBrush = new SolidBrush(Color.Green);
-        SolidBrush limeBrush = new SolidBrush(Color.LimeGreen);
+        int[ , ] gridLocations = new int[80,2];
+        Rectangle player1 = new Rectangle(54, 254, 40, 40);
+        Rectangle fruit = new Rectangle(354, 265, 15, 15);
+        SolidBrush red = new SolidBrush(Color.Red);
+        SolidBrush yellow = new SolidBrush(Color.Yellow);
+        string Direction = "Nil";
         int playerSpeed = 6;
-        bool wDown = false;
-        bool sDown = false;
-        bool aDown = false;
-        bool dDown = false;
+        int[] snakeParts = new int[80];
         public Form1()
         {
             InitializeComponent();
+
+            
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.FillRectangle(greenBrush, player1);
+            e.Graphics.FillRectangle(red, player1);
+            e.Graphics.FillRectangle(yellow, fruit);
 
         }
 
-        /*private void Form1_KeyUp(object sender, KeyEventArgs e)
+        private void gameTimer_Tick(object sender, EventArgs e)
         {
-            switch (e.KeyCode)
+            //movement
+            if (Direction == "Up")
             {
-                case Keys.W:
-                    wDown = false;
-                    break;
-                case Keys.S:
-                    sDown = false;
-                    break;
-                case Keys.A:
-                    aDown = false;
-                    break;
-                case Keys.D:
-                    dDown = false;
-                    break;
+                player1.Y -= playerSpeed;
             }
-        }*/
+            else if (Direction == "Down")
+            {
+                player1.Y += playerSpeed;
+            }
+            else if (Direction == "Left")
+            {
+                player1.X -= playerSpeed;
+            }
+            else if (Direction == "Right")
+            {
+                player1.X += playerSpeed;
+            }
+
+            //wall collisions
+            if(player1.X <= 0)
+            {
+                Application.Exit();
+            }
+            if (player1.X >= this.Width)
+            {
+                Application.Exit();
+            }
+            if (player1.Y <= 70)
+            {
+                Application.Exit();
+            }
+            if (player1.Y >= this.Width)
+            {
+                Application.Exit();
+            }
+
+            Refresh();
+        }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
                 case Keys.W:
-                    wDown = true;
+                    Direction = "Up";
                     break;
                 case Keys.S:
-                    sDown = true;
+                    Direction = "Down";
                     break;
                 case Keys.A:
-                    aDown = true;
+                    Direction = "Left";
                     break;
                 case Keys.D:
-                    dDown = true;
+                    Direction = "Right";
                     break;
+
             }
-        }
-        private void gameTimer_Tick(object sender, EventArgs e)
-        {
-            if (wDown == true)
-            {
-                player1.Y -= playerSpeed;
-            }
-            if (sDown == true)
-            {
-                player1.Y += playerSpeed;
-            }
-            Refresh();
         }
     }
 }
