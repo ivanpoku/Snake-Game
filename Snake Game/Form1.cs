@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Snake Game
+//Vaniya Pokusaev
+//January 17th 2023
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
