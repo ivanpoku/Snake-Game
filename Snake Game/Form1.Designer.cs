@@ -35,11 +35,13 @@
             this.stopwatchLabel = new System.Windows.Forms.Label();
             this.applesLabel = new System.Windows.Forms.Label();
             this.appleImage = new System.Windows.Forms.Label();
+            this.startLabelText = new System.Windows.Forms.Label();
+            this.startLabelBackground = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // gameTimer
             // 
-            this.gameTimer.Enabled = true;
             this.gameTimer.Interval = 500;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
             // 
@@ -81,6 +83,40 @@
             this.appleImage.Text = "apple";
             this.appleImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // startLabelText
+            // 
+            this.startLabelText.BackColor = System.Drawing.Color.White;
+            this.startLabelText.Font = new System.Drawing.Font("Wargate Normal", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startLabelText.Location = new System.Drawing.Point(120, 144);
+            this.startLabelText.Name = "startLabelText";
+            this.startLabelText.Size = new System.Drawing.Size(240, 160);
+            this.startLabelText.TabIndex = 3;
+            this.startLabelText.Text = "Snake Game";
+            this.startLabelText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // startLabelBackground
+            // 
+            this.startLabelBackground.BackColor = System.Drawing.Color.White;
+            this.startLabelBackground.Font = new System.Drawing.Font("Wargate Normal", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startLabelBackground.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.startLabelBackground.Location = new System.Drawing.Point(104, 128);
+            this.startLabelBackground.Name = "startLabelBackground";
+            this.startLabelBackground.Size = new System.Drawing.Size(272, 328);
+            this.startLabelBackground.TabIndex = 4;
+            this.startLabelBackground.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.DimGray;
+            this.label1.Font = new System.Drawing.Font("Wargate Normal", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(120, 328);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(240, 80);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "PLAY";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -88,6 +124,9 @@
             this.BackgroundImage = global::Snake_Game.Properties.Resources.snake_design_Page_4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(474, 531);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.startLabelText);
+            this.Controls.Add(this.startLabelBackground);
             this.Controls.Add(this.appleImage);
             this.Controls.Add(this.applesLabel);
             this.Controls.Add(this.stopwatchLabel);
@@ -108,6 +147,9 @@
         private System.Windows.Forms.Label stopwatchLabel;
         private System.Windows.Forms.Label applesLabel;
         private System.Windows.Forms.Label appleImage;
+        private System.Windows.Forms.Label startLabelText;
+        private System.Windows.Forms.Label startLabelBackground;
+        private System.Windows.Forms.Label label1;
     }
 }
 

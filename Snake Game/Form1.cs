@@ -1,6 +1,7 @@
 ﻿//Snake Game
 //Vaniya Pokusaev
 //January 17th 2023
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +38,7 @@ namespace Snake_Game
         {
             InitializeComponent();
             bodyParts.Add(new Rectangle(55, 254, 40, 40));
+            gameStopwatch.Stop();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -52,6 +54,8 @@ namespace Snake_Game
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
+            
+            
             //Display apples collected
             applesLabel.Text = $"{Apples}";
 
@@ -167,6 +171,21 @@ namespace Snake_Game
                 gameStopwatch.Start();
                 stopwatchLabel.Text = gameStopwatch.Elapsed + "";
             }
+
+        }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            gameStopwatch.Restart();
+            label1.Visible = false;
+            startLabelBackground.Visible = false;
+            startLabelText.Visible = false;
+            gameTimer.Enabled = true;
         }
     }
 }
