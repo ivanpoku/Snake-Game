@@ -137,7 +137,7 @@ namespace Snake_Game
                 //Checks for victory
                 if (bodyParts.Count == 99)
                 {
-                    Application.Restart();
+                    playerSpeed = 0;
                 }
             }
             Refresh();
@@ -174,12 +174,7 @@ namespace Snake_Game
 
         }
 
-        private void startButton_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void label1_Click_1(object sender, EventArgs e)
         {
             gameStopwatch.Restart();
             label1.Visible = false;

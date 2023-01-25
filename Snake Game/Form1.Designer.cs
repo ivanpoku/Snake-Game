@@ -38,6 +38,7 @@
             this.startLabelText = new System.Windows.Forms.Label();
             this.startLabelBackground = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.restartLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // gameTimer
@@ -115,7 +116,19 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "PLAY";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // restartLabel
+            // 
+            this.restartLabel.BackColor = System.Drawing.Color.DimGray;
+            this.restartLabel.Font = new System.Drawing.Font("Wargate Normal", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.restartLabel.Location = new System.Drawing.Point(120, 256);
+            this.restartLabel.Name = "restartLabel";
+            this.restartLabel.Size = new System.Drawing.Size(240, 80);
+            this.restartLabel.TabIndex = 6;
+            this.restartLabel.Text = "RESTART?";
+            this.restartLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.restartLabel.Visible = false;
             // 
             // Form1
             // 
@@ -124,6 +137,7 @@
             this.BackgroundImage = global::Snake_Game.Properties.Resources.snake_design_Page_4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(474, 531);
+            this.Controls.Add(this.restartLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.startLabelText);
             this.Controls.Add(this.startLabelBackground);
@@ -150,6 +164,7 @@
         private System.Windows.Forms.Label startLabelText;
         private System.Windows.Forms.Label startLabelBackground;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label restartLabel;
     }
 }
 
